@@ -35,15 +35,15 @@ You will need the following things properly installed on your computer.
 
 * Create a new Cordova project
 * You'll need the following plugins:
-  * CardIO: card.io.cordova.mobilesdk 2.0.2 
-  * Notification: cordova-plugin-dialogs 1.2.1
-  * Geolocation: cordova-plugin-geolocation 2.1.0
-  * Google Universal Analytics Plugin: cordova-plugin-google-analytics 0.8.1
-  * Mixpanel: cordova-plugin-mixpanel 2.1.0
-  * Splashscreen: cordova-plugin-splashscreen 3.1.0
-  * StatusBar: cordova-plugin-statusbar 2.1.3
-  * Whitelist: cordova-plugin-whitelist 1.2.2
-  * PushPlugin: phonegap-plugin-push 1.6.4
+  * CardIO: `card.io.cordova.mobilesdk`
+  * Notification: `cordova-plugin-dialogs`
+  * Geolocation: `cordova-plugin-geolocation`
+  * Google Universal Analytics Plugin: `cordova-plugin-google-analytics`
+  * Mixpanel: `cordova-plugin-mixpanel`
+  * Splashscreen: `cordova-plugin-splashscreen`
+  * StatusBar: `cordova-plugin-statusbar`
+  * Whitelist: `cordova-plugin-whitelist`
+  * PushPlugin: `phonegap-plugin-push`
 * Copy the built ember app to the root of the cordova project (www folder)
 * Build the app for your desired platform:
   * `cordova build ios --release`
