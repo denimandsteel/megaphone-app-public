@@ -1,15 +1,15 @@
 # Megaphone App
 
-The official app for Megaphone Magazine, helps customers find and pay vendors on the streets of Vancouver and Victoria BC. You can use this code under MIT license and make the necessary changes to make it work with your street paper and your city.
+The official app for Megaphone Magazine, helps customers find and pay vendors on the streets of Vancouver and Victoria, BC. You can use this code under MIT license and make the necessary changes to make it work with your street paper and your city.
 
 This app is built with Ember and can be packaged for iOS and Android using Cordova.
 
 ## Prerequisites
 
-You will need the following things properly installed on your computer.
+You will need the following things properly installed on your computer:
 
 * [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
+* [Node.js](http://nodejs.org/)
 * [Bower](http://bower.io/)
 * [Ember CLI](http://www.ember-cli.com/)
 * [Cordova](https://cordova.apache.org/)
