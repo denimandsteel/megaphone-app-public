@@ -24,6 +24,7 @@ You will need the following things properly installed on your computer:
 ## Running / Development
 
 * `ember server`
+* Start the [Megaphone Server](https://github.com/denimandsteel/megaphone-server-public)
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
 ### Building the Ember App
