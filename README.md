@@ -12,7 +12,7 @@ You will need the following things properly installed on your computer.
 * [Node.js](http://nodejs.org/) (with NPM)
 * [Bower](http://bower.io/)
 * [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+* [Cordova](https://cordova.apache.org/)
 
 ## Installation
 
@@ -51,7 +51,4 @@ You will need the following things properly installed on your computer.
 
 ## Further Reading / Useful Links
 
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* [Cordova](https://cordova.apache.org/)
 * [Megaphone Magazine](http://www.megaphonemagazine.com/)
