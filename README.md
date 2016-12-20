@@ -1,5 +1,4 @@
-# megaphone-app-public
-Megaphone App
+# Megaphone App
 
 The official app for Megaphone Magazine, helps customers find and pay vendors on the streets of Vancouver and Victoria BC. You can use this code under MIT license and make the necessary changes to make it work with your street paper and your city.
 
