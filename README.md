@@ -4,6 +4,9 @@ The official app for Megaphone Magazine, helps customers find and pay vendors on
 
 This app is built with Ember and can be packaged for iOS and Android using Cordova.
 
+The server-side applcation is in a separate repository:
+[Megaphone Server](https://github.com/denimandsteel/megaphone-server-public)
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer:
