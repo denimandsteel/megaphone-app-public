@@ -1,0 +1,16 @@
+<section class="intro">
+  <div class="icon payment"></div>
+  <div class="step">Step 2 of 2</div>
+  <h1>Payments</h1>
+  <p>Pay a Megaphone Vendor by credit card when you don't have cash.</p>
+  <p class="minor">Payments are only for buying physical copies of Megaphone. We do not offer digital copies.</p>
+  {{#if isLoading}}
+    {{spinning-wheel}}
+  {{else}}
+    {{card-scanner class="card-scanner" label='Yes, Set Up Payment' onCardComplete=(action "useScannedCard")}}
+    {{#link-to "dashboard" class="button diminished small full-width"}}
+      Not Right Now
+    {{/link-to}}
+    <div class="notice">You can change this later in Settings</div>
+  {{/if}}
+</section>

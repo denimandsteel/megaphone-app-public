@@ -1,0 +1,98 @@
+@function rem($value) {
+  @if unit($value) == 'px' {
+    // Android enforces a minimum font-size of 8px
+    // We multiply the root element's font size by 100
+    // It's canceled out here by dividing by a 100
+    @return $value * (1rem/1px) / 100;
+  }
+  @if unit($value) == 'pt' {
+    @return $value * (300px/72pt) * (1rem/1px) / 100;
+  }
+}
+
+@font-face {
+  font-family: 'Gibson';
+  font-weight: normal;
+  // src: url('fonts/Gibson.otf') format('otf');
+  src: url('fonts/gibson-webfont.eot');
+  src: url('fonts/gibson-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/gibson-webfont.woff2') format('woff2'),
+       url('fonts/gibson-webfont.woff') format('woff'),
+       url('fonts/gibson-webfont.ttf') format('truetype'),
+       url('fonts/gibson-webfont.svg#gibsonregular') format('svg');
+}
+@font-face {
+  font-family: 'Gibson';
+  font-weight: bold;
+  // src: url('fonts/Gibson-Bold.otf') format('otf');
+  src: url('fonts/gibson-bold-webfont.eot');
+  src: url('fonts/gibson-bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/gibson-bold-webfont.woff2') format('woff2'),
+       url('fonts/gibson-bold-webfont.woff') format('woff'),
+       url('fonts/gibson-bold-webfont.ttf') format('truetype'),
+       url('fonts/gibson-bold-webfont.svg#gibsonbold') format('svg');
+}
+$semibold: 600;
+@font-face {
+  font-family: 'Gibson';
+  font-weight: $semibold;
+  // src: url('fonts/Gibson-SemiBold.otf') format('otf');
+  src: url('fonts/gibson-semibold-webfont.eot');
+  src: url('fonts/gibson-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/gibson-semibold-webfont.woff2') format('woff2'),
+       url('fonts/gibson-semibold-webfont.woff') format('woff'),
+       url('fonts/gibson-semibold-webfont.ttf') format('truetype'),
+       url('fonts/gibson-semibold-webfont.svg#gibsonsemibold') format('svg');
+}
+$light: 200;
+@font-face {
+  font-family: 'Gibson';
+  font-weight: $light;
+  // src: url('fonts/Gibson-Light.otf') format('otf');
+  src: url('fonts/gibson-light-webfont.eot');
+  src: url('fonts/gibson-light-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/gibson-light-webfont.woff2') format('woff2'),
+       url('fonts/gibson-light-webfont.woff') format('woff'),
+       url('fonts/gibson-light-webfont.ttf') format('truetype'),
+       url('fonts/gibson-light-webfont.svg#gibsonlight') format('svg');
+}
+
+$sans-serif: "Gibson", Helvetica, Arial, sans-serif;
+
+
+// Frederick's
+// $blue-lighter: #2f76b4;
+// $blue-medium: #1d6cb0;
+// $blue-darker: #08365C;
+$border-radius: rem(20px);
+
+// Harry's
+// $blue-medium: #4534da;
+$blue-medium: #2A4ED2; // Slightly toned down.
+$blue-lighter: $blue-medium;
+$blue-darker: #314182;
+
+// All dark.
+// $blue-lighter: #314182;
+// $blue-medium: #314182;
+// $blue-darker: #314182;
+
+$tan-light: #e9e7d8;
+$tan-dark: #bab9ad;
+
+$red: #eb4859;
+
+$white: #fff;
+$superlight-grey: #e6e6e6;
+$light-text: #636466;
+$text: #4d4d4f;
+$border: $text;
+$shadow: rgba(0,0,0,0.5);
+$black: #000;
+
+$page-padding: rem(40px);
+$header-height: rem(94px);
+
+// @function pt2px($ptval) {
+//   @return $ptval * (300/72);
+// }

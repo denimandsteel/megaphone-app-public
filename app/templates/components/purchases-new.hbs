@@ -1,0 +1,111 @@
+{{yield}}
+<div class="vendor-drawer">
+  <div class="primary">
+    <h3>Buying from</h3>
+    <div class="name-badge">
+      <h1>{{model.vendor.name}}</h1>
+      <h1 class="light badge-no">Badge {{model.vendor.badge_id}}</h1>
+    </div>
+    {{#link-to "vendors" class="button primary small diminished"}}Change Vendor{{/link-to}}
+  </div>
+  <div class="image-container">
+    <img src="{{model.vendor.profile_url}}">
+  </div>
+</div>
+<div class="vendor-drawer compact hidden">
+  <div class="primary">
+    <h3>Buying from</h3>
+    <div class="name-badge">
+      <h1>{{model.vendor.name}}</h1>
+      <h1 class="light badge-no">Badge {{model.vendor.badge_id}}</h1>
+    </div>
+    {{#link-to "vendors" class="button primary small diminished"}}Change Vendor{{/link-to}}
+  </div>
+  <div class="image-container">
+    <img src="{{model.vendor.profile_url}}">
+  </div>
+</div>
+<div class="bottom">
+<div class="purchase">
+  <div class="products">
+    {{#each model.products as |product|}}
+      {{#unless product.isTip}}
+        <div class="product {{if product.hasQuantity 'active'}}">
+          <div class="product-image-container">
+            <img class="product-image" src="{{product.cover_url}}">
+          </div>
+          <div class="product-info">
+            <div class="name">
+              <h2>{{product.title}}</h2>
+              <h2 class="price">{{format-currency product.price}}</h2>
+            </div>
+            <div class="amount active">
+              <div class="item-amount" {{action 'addOne' product}}>
+                <div class="button-plus">Add Product</div>
+                <div class="quantity">{{product.quantity}}</div>
+              </div>
+              <div class="item-price">
+                <div class="total">{{format-currency product.totalPrice}}</div>
+                {{#if product.hasQuantity}}
+                <div class="minus-container" {{action 'removeAll' product}}>
+                  <div class="button-minus">Remove</div>
+                </div>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/unless}}
+    {{/each}}
+
+    <div class="product product-tip {{if hasTip 'active'}}">
+      <div class="product-info">
+        <div class="name">Add a Tip</div>
+        <div class="amount active">
+          <div class="item-amount">
+            <div class="button-tip" {{action 'addTip' 100}}>+1</div>
+            <div class="button-tip" {{action 'addTip' 200}}>+2</div>
+            <div class="button-tip" {{action 'addTip' 500}}>+5</div>
+          </div>
+          <div class="item-price">
+            <div class="total">{{format-currency tips}}</div>
+            {{#if hasTip}}
+            <div class="minus-container" {{action 'removeAllTips'}}>
+              <div class="button-minus">Remove Product</div>
+            </div>
+            {{/if}}
+          </div>
+        </div>
+        
+      </div>
+    </div>
+     
+  </div>
+</div>
+<div class="transaction-fee">
+  <div class='title'>Transaction Fee</div>
+  <div class='amount'>{{format-currency transactionFee}}</div>
+</div>
+<div class="total-payable">
+  <div class='title'>Total</div>
+  <div class='amount'>{{format-currency totalPayableAmount}}</div>
+</div>
+<div class="purchase-pay">
+  {{#if flashMessage}}
+    <div class="flash-message">
+      {{flashMessage}}
+    </div>
+  {{/if}}
+  {{#if isLoading}}
+    {{spinning-wheel}}
+  {{else}}
+    {{#if flashMessage}}
+      {{#link-to "payment-setup" class="button primary full-width"}}Set up New Card{{/link-to}}
+    {{else if hasSetupPayment}}
+      <div class="button primary full-width {{if canPurchase '' 'disabled'}}" {{ action 'makePayment' }}>Make Payment</div>
+    {{else}}
+      {{#link-to "payment-setup" class="button primary full-width"}}Set Up Payment{{/link-to}}
+    {{/if}}
+  {{/if}}
+</div>
+</div>

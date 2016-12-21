@@ -1,0 +1,34 @@
+<div class="purchase-success">
+  <div class="half vendor {{if vendorGood 'all-good' ''}}">
+    <h1>Payment Complete</h1>
+    <div class="split">
+      <div class="left">
+        <div class="total">{{format-currency model.totalAmount}}</div>
+        <div class="payed">
+          <div class="image-container">
+            <img class="image" src="{{model.vendor.thumb_url}}">
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <h3>Paid to:</h3>
+        <h2>{{model.vendor.name}}</h2>
+        <h2>Ref: {{model.transaction_id}}</h2>
+      </div>
+    </div>
+    {{component 'finish-button' action='setVendorGood'}}
+  </div>
+  <div class="half customer{{if customerGood ' all-good'}}{{if vendorGood ' vendor-all-good'}}">
+    <div class="customer-description">
+      <h1>Confirm With Vendor</h1>
+      <p>Hold your phone flat so {{model.vendor.name}} can see the screen.</p>
+    </div>
+    <div class="customer-thank-you">
+      <h1 class="thank-you">Thank you!</h1>
+      <div class="button big primary full-width {{if vendorGood 'show' ''}}" {{ action 'done' }}>
+        <span class="initial">Finish</span>
+        <span class="complete">&#10003;</span>
+      </div>
+    </div>
+  </div>
+</div>

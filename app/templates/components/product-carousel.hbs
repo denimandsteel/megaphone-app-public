@@ -1,0 +1,26 @@
+<div class="product-list">
+  <ul class="wrap">
+    {{#each carouselProducts as |product|}}
+      <li class="product-item">
+        {{!-- <img src="{{product.profile_url}}"> --}}
+        <img src="{{product.cover_url}}">
+        {{!-- <img src="{{product.image_url}}"> --}}
+      </li>
+    {{/each}}
+  </ul>
+</div>
+<div class="product-description">
+  <ul class="wrap">
+    {{#each carouselProducts as |product|}}
+      <li class="product-info {{if product.active 'active'}}">
+        <h2 class="center">{{product.title}}</h2>
+        <div class="description">{{{format-description product.description}}}</div>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+<!-- <ul class="pager">
+  {{#each carouselProducts as |product|}}
+    <li class="{{if product.active 'active'}}" {{action 'show_product' product @index}}>{{product.title}}</li>
+  {{/each}}
+</ul> -->

@@ -1,0 +1,61 @@
+.recent-vendors {
+  h1 {
+    margin-top: rem(45px);
+    margin-bottom: rem(30px);
+  }
+  .vendors-list {
+    padding: 0 rem(40px - 22px);
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+  }
+
+  .vendor-item {
+    min-width: rem(174px);
+    text-align: center;
+    // margin: 0 rem(10px);
+  }
+
+  .vendor-image-container {
+    display: block;
+    margin: 0 auto;
+    width: rem(130px);
+    height: rem(130px);
+    border-radius: 50%;
+    border: rem(3px) solid $white;
+    box-shadow: 0 rem(3px) rem(5px) $shadow;
+    overflow: hidden;
+  }
+
+  .vendor-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .vendor-name {
+    color: $light-text;
+    // width: rem(70px);
+    margin: rem(13px) 0 rem(20px);
+    font-size: rem(8pt);
+  }
+
+  .vendor-image-container:active + .vendor-name {
+    font-weight: $semibold;
+  }
+}
+
+.find-vendors {
+  text-align: center;
+  margin-top: rem(20px);
+  .buttons {
+    padding: $page-padding;
+    display: flex;
+    flex-direction: column;
+  }
+  .button {
+    padding: $page-padding * 2 / 3;
+    &:first-of-type {
+      margin-bottom: $page-padding;
+    }
+  }
+}

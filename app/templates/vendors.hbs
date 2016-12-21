@@ -1,0 +1,46 @@
+{{outlet}}
+
+<div class="cities">
+  <div class="city {{if isVancouver 'active' 'inactive'}}" {{action 'switch_to_vancouver'}}><span>Vancouver</span></div>
+  <div class="city {{if isVancouver 'inactive' 'active'}}" {{action 'switch_to_victoria'}}><span>Victoria</span></div>
+  {{#if isInMapMode}}
+  <div class="button primary small" {{action 'switch_to_names'}}>Switch to Names</div>
+  {{else}}
+  <div class="button primary small" {{action 'switch_to_map'}}>Switch to Map</div>
+  {{/if}}
+</div>
+
+{{#if isInMapMode}}
+  {{city-map city=city activeNeighbourhoods=activeNeighbourhoods highlightedNeighbourhoods=highlightedNeighbourhoods onNeighbourhoodChange=(action "highlightedNeighbourhoodsUpdated") findVendorsNearMe=(action "findVendorsNearMe")}}
+  {{#if noNeighbourhoodSelected}}
+    <div id="vendors">
+      <div class="vendors-hint">Tap neighbourhoods on the map. Vendors in those areas will appear here.</div>
+    </div>
+  {{/if}}
+  {{#if isVictoria}}
+    <div class="small-note">Please note that Victoria-based vendors cannot yet accept cashless payments.</div>
+  {{/if}}
+  <ul class="vendors-list">
+  {{#each locationsByNeighbourhood as |neighourhoodLocations|}}
+    <h1 class="neighbourhood">{{format-neighbourhood neighourhoodLocations.neighbourhood}}</h1>
+    <ul class="vendors-list">
+    {{#each neighourhoodLocations.locations as |location|}}
+      {{vendor-item-map vendor=location.vendor location=location neighbourhood=neighourhoodLocations.neighbourhood canPay=isVancouver payVendor=(action "payVendor")}}
+    {{/each}}
+    </ul>
+  {{/each}}
+  </ul>
+{{else}}
+  {{#if isVictoria}}
+    <div class="small-note">Please note that Victoria-based vendors cannot yet accept cashless payments.</div>
+  {{/if}}
+  {{alphabetical-picker vendors=vendorsByCity}}
+  <ul class="vendors-list">
+   {{#each vendorsByCity as |vendor|}}
+      {{vendor-item-name vendor=vendor locations=vendor.locations canPay=isVancouver payVendor=(action "payVendor")}}
+    {{/each}}
+  </ul>
+{{/if}}
+
+
+

@@ -1,0 +1,43 @@
+{{outlet}}
+<h1>Payment Information</h1>
+<div class="payment-forms">
+  <!-- <button class="button" {{action 'useTestCard'}}>TEST</button> -->
+  {{#if isLoading}}
+    {{spinning-wheel}}
+  {{else}}
+    {{#if model.last_four_digits}}
+      <p>Currently billing to credit card ending in <strong>{{model.last_four_digits}}</strong>.</p>
+      {{card-scanner label='Update Credit Card' onCardComplete=(action "useScannedCard")}}
+    {{else}}
+      <p>Add or update your credit card by scanning it</p>
+      {{card-scanner label='Scan Now' onCardComplete=(action "useScannedCard")}}
+    {{/if}}
+  {{/if}}
+  {{#if flashMessage}}
+    <div class="flash-message">
+      {{flashMessage}}
+    </div>
+  {{/if}}
+</div>
+<div class="footnote">
+  <strong>Your credit card number is not held with Megaphone.</strong> Payments are encrypted &amp; processed by Stripe.
+</div>
+<h1>Permissions</h1>
+<div class="permissions">
+  <div class="field-group">
+    Notifications:
+    <div class="button-group">
+      <div class="button {{if model.enable_notifications 'active' ''}}" {{action 'enableNotifications'}}>Allow</div>
+      <div class="button {{if model.enable_notifications '' 'active'}}" {{action 'disableNotifications'}}>Decline</div>
+    </div>
+  </div>
+  <!-- <div class="field-group">
+    Location Services:
+    <div class="button-group">
+      <div class="button {{if model.enable_location 'active' ''}}" {{action 'enableLocation'}}>Allow</div>
+      <div class="button {{if model.enable_location '' 'active'}}" {{action 'disableLocation'}}>Decline</div>
+    </div>
+  </div> -->
+</div>
+
+

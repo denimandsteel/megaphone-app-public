@@ -1,0 +1,24 @@
+<div class="transaction">
+  <div class="image-container">
+    <img src="{{purchase.vendor.thumb_url}}">
+  </div>
+  <div class="info">
+    <div class="primary"><span>{{format-currency purchase.totalAmount}} to {{purchase.vendor.name}}</span> 
+      <div class="transaction-date">{{moment-format purchase.created_at 'MMM D, YYYY'}}</div>
+    </div>
+    <div class="secondary">
+      <div class="item">
+        <div class="label">Ref</div>
+        <div class="value">{{purchase.transaction_id}}</div>
+      </div>
+      <div class="item {{if purchase.paid 'long-text'}}">
+        {{#if purchase.paid}}
+          <div class="label">Collected </div>
+          <div class="value">{{moment-format purchase.paid_at 'MMM DD'}}</div>
+        {{else}}
+          <div class="label">Not yet collected</div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

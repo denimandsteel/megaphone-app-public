@@ -1,0 +1,117 @@
+// _map.scss
+
+/* map styles */
+#map {
+  height: auto;
+  width: 100vw;
+  background: $tan-light;
+  box-shadow: rem(0px) rem(0px) rem(10px) $shadow;
+  position: relative;
+  // .hint { position: absolute; }
+  svg {
+    display: block;
+  }
+}
+
+.hint {
+  text-align: center;
+  margin-bottom: rem(25px);
+  color: $light-text;
+}
+.hint {
+  transition: opacity 0.5s ease-out;
+}
+
+#search {
+  position: absolute;
+  bottom: rem(20px);
+  left: rem(20px);
+  font-family: $sans-serif;
+  font-size: rem(22px);
+  line-height: rem(25px);
+  // height: rem(50px);
+  // width: rem(130px);
+  width: rem(200px);
+  text-transform: uppercase;
+  background: $blue-medium;
+  color: $white;
+  text-align: left;
+  border-radius: $border-radius;
+  box-shadow: 0 rem(3px) rem(3px) $shadow;
+  cursor: pointer;
+  padding: rem(10px) rem(10px) rem(10px) rem(75px);
+  &:after {
+    content: '';
+    position: absolute;
+    width: rem(44px); height: rem(44px);
+    top: rem(11px); left: rem(15px);
+    background-image: url(images/search.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  &:hover, &:focus {
+    background-color: $blue-darker;
+  }
+}
+
+svg path {
+  transition: fill .2s ease;
+}
+
+svg path[vendored="yes"] {
+  cursor: pointer;
+}
+
+svg path.enabled {
+  fill: #8db6da; // blue
+}
+
+svg path.active {
+  fill: #eb4859; // red
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.8;
+  }
+  80% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+#current-position {
+  display: none;
+  &.active {
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    width: rem(20px);
+    height: rem(20px);
+    border-radius: rem(10px);
+    box-shadow: rem(1px) rem(1px) rem(2px) rgba(0,0,0, 0.3);
+    background: $blue-medium;
+    /*z-index: 1;*/
+    .pulse {
+      width: rem(60px);
+      height: rem(60px);
+      display: block;
+      position: absolute;
+      top: rem(-21px);
+      left: rem(-21px);
+      border: rem(1px) solid $blue-medium;
+      border-radius: rem(60px);
+      box-shadow: 0 0 rem(5px) $blue-medium;
+
+      /* Set up animation*/
+      animation-name: pulse;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-out;
+    }
+  }
+}

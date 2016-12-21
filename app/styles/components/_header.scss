@@ -1,0 +1,111 @@
+header {
+  font-family: $sans-serif;
+  font-size: rem(10pt);
+  $padding-bottom: rem(25px);
+  width: 100%;
+  box-shadow: rem(0px) rem(0px) rem(3px) $shadow;
+  height: $header-height;
+  text-shadow: 0 rem(2px) $shadow;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  background: $blue-medium;
+  background-image: gradient(linear, left top, left bottom, color-stop(0, #3077B4), color-stop(1, #075FAC));
+  display: flex;
+  // flex-direction: row;
+  // justify-content: space-between;
+  // align-content: flex-end;
+  // align-content: stretch;
+  // align-content: flex-end;
+  // align-items: flex-end; // align to bottom
+  color: white;
+  transition: height 0.5s linear;
+  .region {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    text-decoration: none;
+    color: white;
+    .text {
+      width: 100%;
+      margin-bottom: $padding-bottom;
+    }
+  }
+  .left {
+    cursor: pointer;
+    padding-left: rem(20px);
+    width: 25%;
+    text-align: left;
+  }
+  .back-icon {
+    text-indent: -9999px;
+    background: url('images/back-button.svg') rem(20px) center no-repeat;
+    background-size: rem(53px) rem(53px);
+    &:active {
+      background-image: url('images/back-button-active.svg');
+    }
+  }
+  .center {
+    // transition: width 0.5s linear;
+    width: 50%;
+    text-align: center;
+    font-weight: $semibold;
+    .intro-0-welcome &,
+    .intro-1-notifications &,
+    .intro-2-location &,
+    .intro-3-payment &,
+    .dashboard & {
+      background: url(images/header-logo.svg);
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 40%;
+      margin: 0 5%;
+      .text {
+        text-indent: -9999px;
+      }
+    }
+  }
+  .right {
+    cursor: pointer;
+    padding-right: rem(20px);
+    width: 25%;
+    text-align: right;
+  }
+  .left, .right {
+    font-size: rem(7pt);
+    text-transform: uppercase;
+    &:active .text { font-weight: $semibold; }
+  }
+  .intro-0-welcome &,
+  .intro-1-notifications &,
+  .intro-2-location &,
+  .intro-3-payment & {
+    height: rem(200px);
+    .left, .right { display: none; }
+    .center {
+      margin: 0 auto;
+      width: 80%;
+    }
+  }
+  // .logo {
+  //   margin: 0 auto;
+  //   display: inline-block;
+  //   height: rem(40px);
+  //   text-decoration: none;
+  //   color: $white;
+  //   padding: rem(20px) $header-height 0;
+  //   text-shadow: 0 rem(2px) $shadow;
+  //   background-image: url('images/icons.png');
+  //   background-repeat: no-repeat;
+  //   background-position: 0 0;
+  // }
+  .hint {
+    position: absolute;
+    width: rem(540px);
+    left: 0;
+    top: $header-height;
+  }
+}
+

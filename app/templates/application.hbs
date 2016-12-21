@@ -1,0 +1,35 @@
+<div class="{{classPath}}">
+{{#if nav.title.text}}
+  <header>
+    {{#if nav.leftButton.text}}
+      <div {{action 'leftButton'}} class="region left {{nav.leftButton.icon}}">
+        <div class="text">
+          {{nav.leftButton.text}}
+        </div>
+      </div>
+    {{else}}
+      <div class="region left"></div>
+    {{/if}}
+
+    {{#if nav.title.text}}
+      <div class="region center">
+        <div class="text">
+          {{nav.title.text}}
+        </div>
+      </div>
+    {{/if}}
+
+    {{#if nav.rightButton.text}}
+      <div {{action 'rightButton'}} class="region right {{nav.rightButton.icon}}">
+        <div class="text">
+          {{nav.rightButton.text}}
+        </div>
+      </div>
+    {{/if}}
+  </header>
+{{/if}}
+
+<div class="container">
+  {{outlet}}
+</div>
+</div>

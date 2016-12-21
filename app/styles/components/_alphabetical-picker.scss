@@ -1,0 +1,36 @@
+.alphabetical-picker {
+  display: flex;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  /*height: rem(80px);*/
+  margin-bottom: rem(15px);
+  padding: 0 rem(15px);
+  // align-items: center;
+  .character {
+    font-size: rem(45px);
+    display: flex;
+    align-items: center;
+    min-width: rem(80px);
+    // min-height: rem(60px);
+    text-align: center;
+    padding: rem(30px) rem(0px) rem(35px);
+    // min-height: 6vw;
+    min-width: rem(80px);
+    // color: $superlight-grey;
+    color: $light-text;
+    > div {
+      width: 100%;
+    }
+    &:first-of-type {
+      // padding-left: $page-padding;
+    }
+    &:last-of-type {
+      // padding-right: $page-padding;
+    }
+  }
+  .active {
+    cursor: pointer;
+    font-weight: bold;
+    color: $blue-darker;
+  }
+}

@@ -1,0 +1,15 @@
+{{#if topRecentPurchases}}
+<section class="recent-transactions">
+  <h1>Recent Purchases</h1>
+  <div class="transactions">
+    {{#each topRecentPurchases as |purchase|}}
+      {{transaction-item purchase=purchase}}
+    {{/each}}
+  </div>
+  <div class="buttons">
+    {{#link-to "purchases" class="button diminished full-width"}}
+      View All Purchases
+    {{/link-to}}
+  </div>
+</section>
+{{/if}}

@@ -1,0 +1,40 @@
+h1,
+h2,
+h3 {
+  margin: 0; padding: 0;
+  color: $blue-darker;
+  font-weight: $semibold;
+  &.light {
+    font-weight: $light;
+  }
+}
+h1 {
+  margin: rem(40px) 0;
+  font-size: rem(10pt);
+  // android
+  line-height: rem(7pt);
+  text-transform: uppercase;
+  text-align: center;
+}
+h2 {
+  font-size: rem(8pt);
+  &.center {
+    text-align: center;
+    padding: rem(10px);
+  }
+}
+h3 {
+  font-size: rem(6pt);
+}
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+p {
+  // inherit 8pt from body
+}
+strong {
+  font-weight: $semibold;
+}
+

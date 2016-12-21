@@ -1,0 +1,70 @@
+.intro {
+  // padding: (rem(336px) - $header-height) $page-padding 0;
+  padding: 18vh $page-padding 0;
+  text-align: center;
+  .icon {
+    height: rem(180px);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    &.notifications { background-image: url(images/intro-1-notifications.svg); }
+    &.location { background-image: url(images/intro-2-location.svg); }
+    &.payment { background-image: url(images/intro-3-payment.svg); }
+  }
+  .step {
+    font-size: rem(7pt);
+    text-transform: uppercase;
+    color: $light-text;
+    margin-top: 5vh;
+  }
+  .title {
+    font-weight: $semibold;
+    color: $blue-darker;
+    font-size: rem(15pt);
+    letter-spacing: rem(-2px);
+    margin-top: 4vh;
+  }
+  p {
+    margin-top: 0.6em;
+    font-weight: $light;
+    font-size: rem(10pt);
+    line-height: rem(10.8pt);
+    color: $light-text;
+  }
+  .minor { }
+  .notice {
+    text-transform: uppercase;
+    color: $blue-darker;
+    font-size: rem(6pt);
+    font-weight: $light;
+    margin-top: 1em;
+  }
+  .button + .button {
+    margin-top: rem(20px);
+  }
+  .diminished {
+    background: transparent;
+    border: none;
+    color: $blue-darker;
+    font-weight: normal;
+    text-decoration: underline;
+    text-shadow: none;
+    text-transform: uppercase;
+  }
+}
+
+.intro-0-welcome {
+  .intro {
+    padding-top: 25vh;
+  }
+  .button {
+    margin-top: 7vh;
+  }
+}
+
+.intro-3-payment {
+  .card-scanner {
+    margin-bottom: rem(20px);
+  }  
+}
+

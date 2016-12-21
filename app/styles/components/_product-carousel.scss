@@ -1,0 +1,107 @@
+.now-available {
+  .product-list {
+    overflow: hidden;
+    .wrap {
+      display: flex;
+      padding: 0;
+      &.animate {
+        transition: transform 0.3s ease-out;
+      }
+    }
+  }
+  .product-item {
+    $image-width: 308px;
+    // margin: 0 rem(10px);
+    min-width: rem($image-width);
+    margin-right: $page-padding;
+    img {
+      width: 100%;
+      display: block;
+      border: rem(10px) solid $white;
+      box-shadow: 0 rem(3px) rem(5px) $shadow;
+      margin-bottom: rem(10px);
+      cursor: pointer;
+    }
+    &:first-of-type {
+      margin-left: rem(750px/2 - $image-width/2);
+    }
+    &:last-of-type {
+      box-sizing: content-box;
+      padding-right: rem(750px/2 - $image-width/2);
+    }
+    // &:active {
+    //   img {
+    //     box-shadow: 0 rem(8px) rem(10px) $shadow;
+    //   }
+    // }
+  }
+  .product-description {
+    overflow: hidden;
+    .wrap {
+      transform: translateX(0%);
+      display: flex;
+      padding: 0;
+      transition: transform 0.3s ease-out;
+    }
+  }
+  .product-info {
+    min-width: 100%;
+    h2 {
+      font-size: rem(10pt);
+      margin-top: rem(25px);
+    }
+    color: $light-text;
+    padding: 0 $page-padding;
+    // display: none;
+    // min-height: rem(500px);
+    // &.active { display: block; }
+  }
+  .pager {
+    margin-top: rem(45px);
+    margin-bottom: rem(50px);
+    display: flex;
+    justify-content: center;
+    li {
+      border-radius: 100%;
+      background: $superlight-grey;
+      text-indent: -9999px;
+      width: rem(20px);
+      height: rem(20px);
+      margin-right: rem(18px);
+      &.active {
+        background: $blue-darker;
+      }
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// #magazine {
+//   background: $blue-darker;
+//   padding: 0 rem(50px) 0;
+//   position: relative;
+//   .hint {
+//     position: relative;
+//     margin: 0 0 0 -rem(50px);
+//   }
+//   img {
+//     margin: rem(40px) 0;
+//     border: rem(10px) solid $white;
+//     width: rem(520px);
+//     height: rem(695px);
+//     box-shadow: 0 rem(3px) rem(5px) $shadow;
+//     background: $text;
+//     &.ad {
+//       margin-bottom: 0;
+//       height: rem(140px);
+//     }
+//   }
+// }
+
+// #intro {
+//   h2 { font-size: rem(40px); }
+//   p { font-size: rem(32px); }
+//   .button { margin: rem(40px) 0; }
+// }

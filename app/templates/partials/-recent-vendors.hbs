@@ -1,0 +1,21 @@
+<section class="recent-vendors">
+  {{#if recentVendors}}
+    <h1>Recent Vendors</h1>
+    <ul class="vendors-list">
+    {{#each recentVendors as |vendor|}}
+      <li class="vendor-item">
+        {{#link-to "purchases/new" (query-params vendor=vendor.id) class="vendor-image-container"}}
+          <img class="vendor-image" src="{{vendor.thumb_url}}">
+        {{/link-to}}
+        <div class="vendor-name">{{vendor.name}}</div>
+      </li>
+    {{/each}}
+    </ul>
+  {{/if}}
+  <div class="find-vendors">
+    <div class="buttons">
+      <div class="button primary" {{action 'go_to_vendors_by_map'}}>Find a Vendor</div>
+      <div class="button primary" {{action 'go_to_vendors_by_name'}}>Pay a Vendor</div>
+    </div>
+  </div>
+</section>

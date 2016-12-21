@@ -1,0 +1,50 @@
+<li class="vendor {{if isActive 'active'}}">
+  <div class="header" {{action 'toggleCollapsed'}}>
+    <div class="vendor-name">
+      <h2>{{vendor.name}} at {{location.name}}</h2>
+      <div class="secondary cross-street">{{location.cross_street}}</div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="vendor-info">
+      <div class="vendor-image-container">
+        <img class="vendor-image" src="{{vendor.profile_url}}">
+      </div>
+      <div class="products-info">
+        <div>
+          <h2>Sells</h2>
+          <ul>
+            {{#each vendor.products as |product|}}
+              <li>{{product.title}}</li>
+            {{/each}}
+            {{#if vendor.has_back_issues}}
+              <li>Back issues</li>
+            {{/if}}
+          </ul>
+        </div>
+        <div class="calls-to-action">
+          {{#if canPay}}
+            {{#link-to "purchases/new" (query-params vendor=vendor.id) class="button first small"}}Pay Vendor{{/link-to}}
+          {{/if}}
+          <a href="http://maps.apple.com/maps?q={{location.cross_street}}, {{location.city}}, BC, Canada" class="button small map-link">Open in Maps</a>
+        </div>
+      </div>
+    </div>
+    {{#if location.hasSpeechBubble}}
+      <div class="location tight">
+        <div class="bottom">
+          <div class="description">
+            {{#if location.hasDescription}}
+              <h2>Where to find me</h2>
+              <div>{{location.description}}</div>
+            {{/if}}
+            {{#if location.hasHours}}
+              <h2 class="hours">My usual hours</h2>
+              <div>{{{location.hours}}}</div>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    {{/if}}
+  </div>
+</li>

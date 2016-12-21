@@ -1,0 +1,3 @@
+{{#each alphaList as |vendor|}}
+  <li class="character {{if vendor.active 'active' ''}}" {{action 'chooseCharacter' vendor.vendor}}><div>{{vendor.character}}</div></li>
+{{/each}}

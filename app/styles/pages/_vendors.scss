@@ -1,0 +1,62 @@
+.cities {
+  display: flex;
+  align-items: center;
+  // align-content: stretch;
+  // justify-content: space-between;
+  margin: rem(30px) 0;
+  // padding: 0 $page-padding;
+  .city {
+    // display: inline-block;
+    font-size: rem(8pt);
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: $blue-darker;
+    cursor: pointer;
+    span {
+      padding-bottom: rem(5px);
+    }
+    &.active, &:active {
+      font-weight: $semibold;
+      span {        
+        border-bottom: rem(3px) solid $blue-darker;
+      }
+    }
+  }
+  .button {
+    font-size: rem(7pt);
+    font-weight: normal;
+    text-transform: none;
+    min-width: 40%;
+    // max-width: 40%;
+    margin-right: $page-padding;
+
+  }
+}
+
+.vendors-hint {
+  margin-top: rem(20px);
+  padding: rem(20px) rem(40px);
+  text-align: center;
+}
+
+.vendors-list {
+  .neighbourhood {
+    margin-top: rem(80px);
+    padding: 0 $page-padding;
+  }
+  > div:last-of-type {
+    .vendor {
+      .header {
+        border-bottom: 1px solid $border;
+      }
+      &.active .header { border-bottom: 0; }
+    }
+  }
+}
+
+.small-note {
+  text-align: center;
+  padding: rem(20px) rem(40px);
+  font-size: rem(30px);
+}
