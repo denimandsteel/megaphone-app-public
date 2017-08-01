@@ -11,6 +11,7 @@ module.exports = function(environment) {
     gcmSenderID: "<gcmSenderID>",
     stripePublishableKey: "<stripePublishableKey>",
     googleAnalyticsID: "<googleAnalyticsID>",
+    appTitle: "Street Sense",
     
     contentSecurityPolicy: {
       'default-src': "'none'",

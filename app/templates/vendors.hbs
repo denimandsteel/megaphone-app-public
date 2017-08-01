@@ -1,6 +1,6 @@
 {{outlet}}
 
-<div class="cities">
+<!-- <div class="cities">
   <div class="city {{if isVancouver 'active' 'inactive'}}" {{action 'switch_to_vancouver'}}><span>Vancouver</span></div>
   <div class="city {{if isVancouver 'inactive' 'active'}}" {{action 'switch_to_victoria'}}><span>Victoria</span></div>
   {{#if isInMapMode}}
@@ -8,7 +8,7 @@
   {{else}}
   <div class="button primary small" {{action 'switch_to_map'}}>Switch to Map</div>
   {{/if}}
-</div>
+</div> -->
 
 {{#if isInMapMode}}
   {{city-map city=city activeNeighbourhoods=activeNeighbourhoods highlightedNeighbourhoods=highlightedNeighbourhoods onNeighbourhoodChange=(action "highlightedNeighbourhoodsUpdated") findVendorsNearMe=(action "findVendorsNearMe")}}
