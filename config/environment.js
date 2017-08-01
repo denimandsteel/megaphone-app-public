@@ -16,7 +16,7 @@ module.exports = function(environment) {
     
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-eval' https://www.google-analytics.com https://js.stripe.com  https://api.stripe.com",
+      'script-src': "'self' 'unsafe-eval' https://www.google-analytics.com https://js.stripe.com  https://api.stripe.com http://localhost:49152",
       'font-src': "'self'",
       'connect-src': "'self'",
       'img-src': "'self' https://www.google-analytics.com",

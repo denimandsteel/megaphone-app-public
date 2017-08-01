@@ -31,13 +31,13 @@
   {{/each}}
   </ul>
 {{else}}
-  {{#if isVictoria}}
+  <!-- {{#if isVictoria}}
     <div class="small-note">Please note that Victoria-based vendors cannot yet accept cashless payments.</div>
-  {{/if}}
-  {{alphabetical-picker vendors=vendorsByCity}}
+  {{/if}} -->
+  {{alphabetical-picker vendors=vendors}}
   <ul class="vendors-list">
-   {{#each vendorsByCity as |vendor|}}
-      {{vendor-item-name vendor=vendor locations=vendor.locations canPay=isVancouver payVendor=(action "payVendor")}}
+   {{#each vendors as |vendor|}}
+      {{vendor-item-name vendor=vendor locations=vendor.locations canPay=true payVendor=(action "payVendor")}}
     {{/each}}
   </ul>
 {{/if}}

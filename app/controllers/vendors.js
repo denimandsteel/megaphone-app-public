@@ -3,8 +3,9 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   dashboardController: Ember.inject.controller('dashboard'),
-  victoriaVendors: Ember.computed.alias("dashboardController.victoriaVendors"),
-  vancouverVendors: Ember.computed.alias("dashboardController.vancouverVendors"),
+  // victoriaVendors: Ember.computed.alias("dashboardController.victoriaVendors"),
+  // vancouverVendors: Ember.computed.alias("dashboardController.vancouverVendors"),
+  vendors: Ember.computed.alias("dashboardController.vendors"),
   highlightedNeighbourhoods: Ember.A(),
   activeNeighbourhoods: Ember.A(),
   _locationsByNeighbourhood: Ember.A(),
@@ -42,19 +43,19 @@ export default Ember.Controller.extend({
     $('#current-position').removeClass('active');
   }.observes('city'),
 
-  updateActiveNeighbourhoods: function() {
-    var that = this;
-    this.set('activeNeighbourhoods', Ember.A());
-    this.get('vendorsByCity').toArray().forEach(function(vendor) {
-      vendor.get('locations').then(function(locations) {
-        locations.toArray().forEach(function(location) {
-          if (that.activeNeighbourhoods.indexOf(location.get('neighbourhood')) < 0) {
-            that.activeNeighbourhoods.pushObject(location.get('neighbourhood'));
-          }
-        });
-      });
-    });
-  }.observes('city', 'vendorsByCity'),
+  // updateActiveNeighbourhoods: function() {
+  //   var that = this;
+  //   this.set('activeNeighbourhoods', Ember.A());
+  //   this.get('vendorsByCity').toArray().forEach(function(vendor) {
+  //     vendor.get('locations').then(function(locations) {
+  //       locations.toArray().forEach(function(location) {
+  //         if (that.activeNeighbourhoods.indexOf(location.get('neighbourhood')) < 0) {
+  //           that.activeNeighbourhoods.pushObject(location.get('neighbourhood'));
+  //         }
+  //       });
+  //     });
+  //   });
+  // }.observes('city', 'vendorsByCity'),
 
   locationsByNeighbourhood: function() {
     var that = this;

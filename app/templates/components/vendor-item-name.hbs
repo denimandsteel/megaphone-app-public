@@ -1,20 +1,22 @@
-<li id="vendor-{{vendor.id}}" class="vendor {{if isActive 'active'}}">
-  <div class="header" {{action 'toggleCollapsed'}}>
-    <div class="vendor-image">
-      <div class="vendor-image-container">
-        <img class="vendor-image" src="{{vendor.thumb_url}}">
+<li id="vendor-{{vendor.id}}" class="vendor">
+  {{#link-to "purchases/new" (query-params vendor=vendor.id)}}
+    <div class="header" {{action 'toggleCollapsed'}}>
+      <div class="vendor-image">
+        <div class="vendor-image-container">
+          <img class="vendor-image" src="{{vendor.thumb_url}}">
+        </div>
       </div>
-    </div>
-    <div class="vendor-name">
-      <h2>{{vendor.name}}</h2>
-      <div class="secondary">Badge {{vendor.badge_id}}</div>
-    </div>
-    {{#if canPay}}
-      <div class="pay">
-        {{#link-to "purchases/new" (query-params vendor=vendor.id) class="button small"}}Pay{{/link-to}}
+      <div class="vendor-name">
+        <h2>{{vendor.name}}</h2>
+        <div class="secondary">Badge {{vendor.badge_id}}</div>
       </div>
-    {{/if}}
-  </div>
+      <!-- {{#if canPay}}
+        <div class="pay">
+          {{#link-to "purchases/new" (query-params vendor=vendor.id) class="button small"}}Pay{{/link-to}}
+        </div>
+      {{/if}} -->
+    </div>
+  {{/link-to}}
   <div class="body">
     <div class="locations">
       {{#each vendor.locations as |location|}}

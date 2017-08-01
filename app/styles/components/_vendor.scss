@@ -5,6 +5,15 @@
   $row-spacing: rem(60px);
   // margin: $row-spacing/2 0;
   padding: 0 $page-padding;
+
+  a:link {
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: $blue-medium;
+  }
+
   .header {
     display: flex;
     align-items: center;
@@ -61,7 +70,7 @@
       background: url('images/disclosure-triangle.svg') center center no-repeat;
       background-size: contain;
       transition: ease-out 500ms transform;
-      transform: rotate(0deg);
+      transform: rotate(90deg);
     }
   }
   .body {

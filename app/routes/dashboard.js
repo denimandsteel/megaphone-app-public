@@ -9,8 +9,8 @@ export default Ember.Route.extend(AuthMixin, NavBarMixin, {
       products: this.store.findAll('product'),
       vendors: this.store.findAll('vendor'),
       purchases: this.store.findAll('purchase'),
-      victoriaVendors: this.store.query('vendor', {city: 'Victoria'}),
-      vancouverVendors: this.store.query('vendor', {city: 'Vancouver'})
+      // victoriaVendors: this.store.query('vendor', {city: 'Victoria'}),
+      // vancouverVendors: this.store.query('vendor', {city: 'Vancouver'})
     });
   },
   setupController(controller, model) {
@@ -18,8 +18,8 @@ export default Ember.Route.extend(AuthMixin, NavBarMixin, {
     Ember.set(controller, 'products', model.products);
     Ember.set(controller, 'vendors', model.vendors);
     Ember.set(controller, 'purchases', model.purchases);
-    Ember.set(controller, 'victoriaVendors', model.victoriaVendors);
-    Ember.set(controller, 'vancouverVendors', model.vancouverVendors);
+    // Ember.set(controller, 'victoriaVendors', model.victoriaVendors);
+    // Ember.set(controller, 'vancouverVendors', model.vancouverVendors);
   },
   nav: {
     controller: 'application',
