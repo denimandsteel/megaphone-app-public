@@ -315,7 +315,7 @@ $vendor-drawer-vertical-padding: rem(22px);
     overflow: hidden;
     position: relative;
     &:focus, &:active {
-      background: $blue-lighter;
+      background: $blue-medium;
       color: $white;
       text-shadow: 0 rem(2px) $shadow;
     }

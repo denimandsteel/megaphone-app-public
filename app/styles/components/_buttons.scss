@@ -24,13 +24,13 @@
     text-transform: none;
   }
   // &.primary {
-    background: $blue-lighter;
+    background: $blue-medium;
     color: $white;
     text-shadow: 0 rem(2px) $shadow;
     // &:hover,  
     &:focus, &:active {
       background: $white;
-      color: $blue-lighter;
+      color: $blue-medium;
       text-shadow: none;
     }
   // }

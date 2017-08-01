@@ -69,8 +69,13 @@ $border-radius: rem(20px);
 // Harry's
 // $blue-medium: #4534da;
 $blue-medium: #2A4ED2; // Slightly toned down.
-$blue-lighter: $blue-medium;
 $blue-darker: #314182;
+
+$street-sense-blue: #263875;
+$street-sense-orange: #EA8741;
+
+$blue-medium: $street-sense-blue;
+$blue-darker: $street-sense-blue;
 
 // All dark.
 // $blue-lighter: #314182;
