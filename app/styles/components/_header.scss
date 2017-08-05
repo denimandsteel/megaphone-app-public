@@ -1,5 +1,5 @@
 header {
-  font-family: $sans-serif;
+  font-family: $header-font;
   font-size: rem(10pt);
   $padding-bottom: rem(25px);
   width: 100%;
@@ -60,7 +60,7 @@ header {
       background-size: contain;
       background-position: center center;
       background-repeat: no-repeat;
-      width: 40%;
+      width: 50%;
       margin: 0 5%;
       .text {
         text-indent: -9999px;

@@ -17,19 +17,24 @@ html {
   font-size: (100vw/750)*100;
   -webkit-overflow-scrolling: touch;
 }
+
 *, *:before, *:after {
   box-sizing: border-box;
-  fill: $blue-medium;
 }
+
 body {
   margin: 0;
-  font-family: $sans-serif;
+  font-family: $body-font;
   -webkit-font-smoothing: antialiased;
   font-size: rem(8pt);
   // android
   line-height: rem(9.8pt);
   color: $text;
   background: $white;
+}
+
+a:link {
+  color: $blue-medium;
 }
 // html, body {
 //   height: 100%;

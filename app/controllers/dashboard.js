@@ -1,7 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  // needs: ['vendors'],
+  applicationController: Ember.inject.controller('application'),
+  vendors: Ember.computed.alias("applicationController.vendors"),
+  products: Ember.computed.alias("applicationController.products"),
+  purchases: Ember.computed.alias("applicationController.purchases"),
   highlighted_product: null,
   productsSortingAsc: ['order:asc'],
   purchasesSortingRecent: ['created_at:desc'],

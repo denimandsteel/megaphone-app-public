@@ -23,17 +23,18 @@
   &.diminished {
     text-transform: none;
   }
-  // &.primary {
-    background: $blue-medium;
-    color: $white;
+  &.primary {
+    background: $street-sense-orange;
+    color: $white !important;
     text-shadow: 0 rem(2px) $shadow;
+    border: 0px;
     // &:hover,  
     &:focus, &:active {
       background: $white;
       color: $blue-medium;
       text-shadow: none;
     }
-  // }
+  }
   &.disabled {
     opacity: 0.5;
     cursor: default;
@@ -46,6 +47,7 @@
     font-size: rem(8pt);
     width: 75%;
     margin: 0 auto;
+    border-width: 1px;
     padding: rem(18px - 8px) 0 rem(11px - 5px);
     &.full-width {
       width: 100%;

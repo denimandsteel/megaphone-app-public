@@ -2,10 +2,8 @@ import Ember from 'ember';
 /* global _ */
 
 export default Ember.Controller.extend({
-  dashboardController: Ember.inject.controller('dashboard'),
-  // victoriaVendors: Ember.computed.alias("dashboardController.victoriaVendors"),
-  // vancouverVendors: Ember.computed.alias("dashboardController.vancouverVendors"),
-  vendors: Ember.computed.alias("dashboardController.vendors"),
+  applicationController: Ember.inject.controller('application'),
+  vendors: Ember.computed.alias("applicationController.vendors"),
   highlightedNeighbourhoods: Ember.A(),
   activeNeighbourhoods: Ember.A(),
   _locationsByNeighbourhood: Ember.A(),

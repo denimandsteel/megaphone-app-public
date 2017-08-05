@@ -65,7 +65,7 @@ $vendor-drawer-vertical-padding: rem(22px);
     min-width: $vendor-drawer-image-size;
     height: $vendor-drawer-image-size;
     border-radius: 50%;
-    border: rem(3px) solid $white;
+    /*border: rem(3px) solid $white;*/
     overflow: hidden;
     img {
       position: relative;

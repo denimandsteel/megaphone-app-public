@@ -8,7 +8,7 @@ module.exports = function(environment) {
     locationType: 'hash',
     serverHost: "http://localhost:3000",
     gcmSandbox: "true",
-    gcmSenderID: "<gcmSenderID>",
+    gcmSenderID: "538226332098",
     stripePublishableKey: "<stripePublishableKey>",
     googleAnalyticsID: "<googleAnalyticsID>",
     appTitleShort: "Street Sense",
@@ -57,7 +57,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.serverHost = "<serverHost>";
+    ENV.serverHost = "https://street-sense.herokuapp.com/";
     ENV.gcmSandbox = "false";
     ENV.stripePublishableKey = "<stripePublishableKey>";
   }
