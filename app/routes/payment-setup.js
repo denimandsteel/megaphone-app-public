@@ -10,6 +10,7 @@ export default Ember.Route.extend(NavBarMixin, NavigationHistoryMixin, {
       return devices.get('firstObject');
     });
   },
+
   activate: function() {
     var that = this;
     if (typeof PushNotification !== 'undefined') {
@@ -24,6 +25,7 @@ export default Ember.Route.extend(NavBarMixin, NavigationHistoryMixin, {
       });
     }
   },
+
   nav: {
     controller: 'application',
 

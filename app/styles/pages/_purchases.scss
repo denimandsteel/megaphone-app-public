@@ -275,6 +275,7 @@ $vendor-drawer-vertical-padding: rem(22px);
   }
 }
 .purchase-pay {
+  display: flex;
   margin-top: rem(50px);
   padding: 0 $page-padding $page-padding;
   .flash-message {
@@ -286,6 +287,13 @@ $vendor-drawer-vertical-padding: rem(22px);
     color: $blue-darker;
     text-align: center;
     margin: rem(30px) 0;
+  }
+  .button, button {
+    font-size: rem(30px);
+    margin-left: rem(10px);
+    &:first-child {
+      margin-left: rem(0px);
+    }
   }
 }
 .purchases-success {

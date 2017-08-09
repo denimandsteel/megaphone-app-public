@@ -9,7 +9,7 @@ module.exports = function(environment) {
     serverHost: "http://localhost:3000",
     gcmSandbox: "true",
     gcmSenderID: "538226332098",
-    stripePublishableKey: "<stripePublishableKey>",
+    stripePublishableKey: "pk_test_H2qChS0miwSFofvIGqUJmcKp",
     googleAnalyticsID: "<googleAnalyticsID>",
     appTitleShort: "Street Sense",
     appTitleFull: "Street Sense Vendor Payments",
@@ -59,7 +59,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.serverHost = "https://street-sense.herokuapp.com/";
     ENV.gcmSandbox = "false";
-    ENV.stripePublishableKey = "<stripePublishableKey>";
+    ENV.stripePublishableKey = "pk_test_H2qChS0miwSFofvIGqUJmcKp";
   }
 
   return ENV;

@@ -3,15 +3,18 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   isLoading: false,
   tips: 0,
+
   didInsertElement: function() {
     this.$('.bottom').hide();
     this.$('.bottom').delay(500).fadeIn(500);
     this.setupScroll();
   },
+
   hasSetupPayment: function() {
     var device = this.get('model').device;
     return (device.get('payment_token') && device.get('payment_token').length > 0);
   }.property('model.device'),
+
   setupScroll: function() {
     var didScroll;
     var lastScrollTop = 0;
@@ -42,6 +45,7 @@ export default Ember.Component.extend({
       // lastScrollTop = st;
     }
   },
+
   totalProductAmount: function() {
     return this.get('model').products.toArray().reduce(function(total, product) { 
       return total + Number(product.get('totalPrice')); 
@@ -73,6 +77,18 @@ export default Ember.Component.extend({
   resetProductAmounts: function() {
     return this.get('model').products.toArray().forEach(function(product) { 
       product.set('quantity', 0);
+    });
+  },
+
+  updateApplePayInfo: function(applePayStripeToken) {
+    appServer.updateApplePayInfo(this.model, this.get('preferences.api_token'), applePayStripeToken, function(error, data) {
+      if (error) {
+        that.set('flashMessage', error.responseText);
+      } else {
+        that.set('flashMessage', '');
+        that.model.reload();
+      }
+      that.set('isLoading', false);
     });
   },
 
@@ -122,6 +138,9 @@ export default Ember.Component.extend({
       } else {
         confirmCallback(2);
       }
+    },
+
+    makePaymentWithApplePay: function(applePayStripeToken) {
       
     }
   }
