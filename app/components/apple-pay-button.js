@@ -11,18 +11,23 @@ export default Ember.Component.extend({
   }.property('total'),
 
   didInsertElement() {
-    ApplePay.canMakePayments()
-    .then((message) => {
-      // Apple Pay is enabled and a supported card is setup. Expect:
-      // 'This device can make payments and has a supported card'
-      Ember.$().css('display', 'block');
-    })
-    .catch((message) => {
-      // There is an issue, examine the message to see the details, will be:
-      // 'This device cannot make payments.''
-      // 'This device can make payments but has no supported cards'
-      Ember.$().css('display', 'none');
-    });
+    if (window.ApplePay) {
+      ApplePay.canMakePayments()
+      .then((message) => {
+        // Apple Pay is enabled and a supported card is setup. Expect:
+        // 'This device can make payments and has a supported card'
+        this.$().css('display', 'block');
+      })
+      .catch((message) => {
+        // There is an issue, examine the message to see the details, will be:
+        // 'This device cannot make payments.''
+        // 'This device can make payments but has no supported cards'
+        this.$().css('display', 'none');
+      });  
+    } else {
+      this.$().css('background-color', 'red');
+      this.$().css('display', 'none');
+    }
   },
 
   touchStart: function(event) {

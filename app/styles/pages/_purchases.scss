@@ -43,6 +43,9 @@ $vendor-drawer-vertical-padding: rem(22px);
     .name-badge {
       display: flex;
       flex-direction: column;
+      h1 {
+        color: $street-sense-dark-grey;
+      }
     }
 
     .badge-no, .button { 
@@ -127,6 +130,9 @@ $vendor-drawer-vertical-padding: rem(22px);
         .price {
           font-weight: normal;
         }
+        h2 {
+          color: $street-sense-dark-grey;
+        }
       }
       .amount {
         color: $tan-dark;
@@ -155,7 +161,8 @@ $vendor-drawer-vertical-padding: rem(22px);
             font-size: rem(26pt);
             font-weight: $light;
             line-height: rem(19pt);
-            // line-height: 70%;
+            color: $street-sense-dark-grey;
+      
           }
           &:active .button-plus {
             background-color: $blue-darker;
@@ -173,6 +180,7 @@ $vendor-drawer-vertical-padding: rem(22px);
             font-size: rem(10pt);
             line-height: 73%;
             font-weight: $semibold;
+            color: $street-sense-dark-grey;
           }
           .minus-container {
             padding: rem(25px);
@@ -239,13 +247,13 @@ $vendor-drawer-vertical-padding: rem(22px);
 }
 
 .transaction-fee {
-  border-top: rem(7px) solid $blue-darker;
+  border-top: rem(4px) solid $street-sense-light-grey;
   margin: 0 $page-padding;
   padding: rem(25px) 0 rem(0px);
   display: flex;
   justify-content: space-between;
   font-size: rem(10pt);
-  color: $blue-darker;
+  color: $street-sense-dark-grey;
   .amount {
     font-weight: $semibold;
     margin-right: rem(35px + 25px);
@@ -253,11 +261,11 @@ $vendor-drawer-vertical-padding: rem(22px);
 }
 
 .total-payable {
-  color: $blue-darker;
+  color: $street-sense-dark-grey;
   margin: 0 $page-padding;
   padding: rem(35px) 0 rem(32px);
   margin-top: rem(15px);
-  border-bottom: rem(7px) solid $blue-darker;
+  border-bottom: rem(4px) solid $street-sense-light-grey;
   font-size: rem(14pt);
   display: flex;
 
