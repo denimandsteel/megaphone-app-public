@@ -51,6 +51,8 @@ header {
     width: 50%;
     text-align: center;
     font-weight: $semibold;
+    text-transform: uppercase;
+    font-size: rem(44px);
     .intro-0-welcome &,
     .intro-1-notifications &,
     .intro-2-location &,

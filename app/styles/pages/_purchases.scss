@@ -272,7 +272,6 @@ $vendor-drawer-vertical-padding: rem(22px);
   .title {
     flex-grow: 1;
     // margin-right: rem(75px);
-    text-align: right;
     // margin-left: rem(40px);
   }
   .amount {
@@ -449,7 +448,7 @@ $vendor-drawer-vertical-padding: rem(22px);
       }
       h2 {
         font-weight: normal;
-        font-size: rem(18pt);
+        font-size: rem(16pt);
         line-height: 115%;
 
       }
@@ -463,7 +462,8 @@ $vendor-drawer-vertical-padding: rem(22px);
     min-height: 40vh;
     padding: rem(50px) $page-padding;
     justify-content: center;
-    background: #efefef;
+    color: white;
+    background: $blue-medium;
     .thank-you {
       width: rem(570px*0.75);
       height: rem(165px*0.75);
@@ -474,8 +474,9 @@ $vendor-drawer-vertical-padding: rem(22px);
     }
     .customer-description {
       h1 {
+        color: white;
         margin-top: 0;
-        margin-bottom: rem(25px);
+        margin-bottom: rem(45px);
       }
       p {
         margin-top: rem(25px);

@@ -3,7 +3,8 @@
     li {
       display: block;
       padding: 0 $page-padding;
-      font-size: rem(10pt);
+      font-size: rem(11pt);
+      color: $street-sense-dark-grey;
       a {
         padding: rem(40px - 3px) 0;
         width: 100%;
@@ -11,7 +12,7 @@
         text-decoration: none;
         color: $text;
       }
-      text-transform: uppercase;
+      text-transform: capitalize;
       border-bottom: 1px solid $border;
       &:active {
         background: $superlight-grey;
