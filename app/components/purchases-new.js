@@ -12,7 +12,7 @@ export default Ember.Component.extend({
 
   hasSetupPayment: function() {
     var device = this.get('model').device;
-    return (device.get('payment_token') && device.get('payment_token').length > 0);
+    return (device.get('stripe_customer') && device.get('stripe_customer').length > 0);
   }.property('model.device'),
 
   setupScroll: function() {
@@ -120,6 +120,7 @@ export default Ember.Component.extend({
           purchase.set('products', that.get('model').products);
           purchase.set('tips', that.tips);
           purchase.set('products_amount', that.get('totalProductAmount'));
+          purchase.set('payment_method', 'creditcard');
           purchase.save().then(function(saved_purchase) {
             that.set('isLoading', false);
             that.resetProductAmounts();
@@ -140,7 +141,29 @@ export default Ember.Component.extend({
       }
     },
 
-    makePaymentWithApplePay: function(applePayStripeToken) {
+    applePayTransactionComplete: function(applePayStripeToken) {
+      var that = this;
+      console.log('got token: ', applePayStripeToken);
+      this.set('model.device.apple_pay_token', applePayStripeToken);
+      this.get('model.device').save().then((device) => {
+        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+        that.set('isLoading', true);
+        var purchase = that.store.createRecord('purchase');
+        purchase.set('vendor', that.get('model.vendor'));
+        purchase.set('products', that.get('model').products);
+        purchase.set('tips', that.tips);
+        purchase.set('products_amount', that.get('totalProductAmount'));
+        purchase.set('payment_method', 'applepay');
+        purchase.save().then(function(saved_purchase) {
+          that.set('isLoading', false);
+          that.resetProductAmounts();
+          that.get('router').transitionTo('purchases/success', {queryParams: {purchase_id: saved_purchase.get('id')}});  
+        }, function(err) {
+          // that.set('flashMessage', typeof err.errors !== 'undefined' ? err.errors[0].detail : err);
+          that.set('flashMessage', "Sorry, we can't process this credit card.");
+          that.set('isLoading', false);
+        });
+      });
       
     }
   }

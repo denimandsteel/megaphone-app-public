@@ -108,7 +108,7 @@
       {{else}}
         {{#link-to "payment-setup" class="button primary full-width"}}Set Up Payment{{/link-to}}
       {{/if}}
-      {{apple-pay-button total=totalPayableAmount}}
+      {{apple-pay-button total=totalPayableAmount transactionCompleteAction=applePayTransactionComplete}}
     </div>
   {{/if}}
 </div>
