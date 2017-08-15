@@ -53,9 +53,7 @@ export default Ember.Component.extend({
       console.log('payment response:');
       console.log(paymentResponse);
 
-      // paymentResponse.stripeToken
-      // TODO: create
-      this.get('transactionCompleteAction')(paymentResponse.stripeToken);
+      this.get('onTransactionComplete')(paymentResponse.stripeToken);
 
       ApplePay.completeLastTransaction('success');
     })

@@ -283,6 +283,7 @@ $vendor-drawer-vertical-padding: rem(22px);
 }
 .purchase-pay {
   display: flex;
+  flex-direction: column;
   margin-top: rem(50px);
   padding: 0 $page-padding $page-padding;
   .flash-message {
@@ -295,11 +296,16 @@ $vendor-drawer-vertical-padding: rem(22px);
     text-align: center;
     margin: rem(30px) 0;
   }
-  .button, button {
-    font-size: rem(30px);
-    margin-left: rem(10px);
-    &:first-child {
-      margin-left: rem(0px);
+  .buttons {
+    display: flex;
+    flex-direction: row;
+
+    .button, button {
+      font-size: rem(30px);
+      margin-left: rem(10px);
+      &:first-child {
+        margin-left: rem(0px);
+      }
     }
   }
 }
