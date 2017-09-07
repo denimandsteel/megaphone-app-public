@@ -40,6 +40,7 @@ export default Ember.Controller.extend({
   actions: {
     useScannedCard: function(card_number, card_expiry_month, card_expiry_year, card_cvc) {
       this.model.set('preferred_payment_method', 'creditcard');
+      this.model.save();
       this.updateCreditCardInfo(card_number, card_expiry_month, card_expiry_year, card_cvc);
     },
 

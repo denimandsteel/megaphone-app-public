@@ -97,10 +97,12 @@ export default Ember.Controller.extend({
 
     switchToApplePay: function() {
       this.model.set('preferred_payment_method', 'applepay');
+      this.model.save();
     },
 
     switchToCreditCard: function() {
       this.model.set('preferred_payment_method', 'creditcard');
+      this.model.save();
     }
   }
 });
