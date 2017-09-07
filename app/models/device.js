@@ -11,6 +11,7 @@ export default DS.Model.extend({
   last_four_digits: DS.attr('string'),
   card_token: DS.attr('string'),
   apple_pay_token: DS.attr('string'),
+  preferred_payment_method: DS.attr('string'),
 
   hasSetupPayment: function() {
     return (this.get('stripe_customer').length > 0);

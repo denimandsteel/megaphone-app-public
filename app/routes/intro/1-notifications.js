@@ -10,7 +10,7 @@ export default Ember.Route.extend(AuthMixin, NavBarMixin, {
   },
   nav: {
     title: {
-      text: 'MEGAPHONE'
+      text: 'STREET SENSE'
     },
   }
 });

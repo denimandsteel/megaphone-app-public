@@ -101,14 +101,17 @@
         </div>
       {{/if}}
       <div class="buttons">
-        {{#if flashMessage}}
-          {{#link-to "payment-setup" class="button primary full-width"}}Set up New Card{{/link-to}}
-        {{else if hasSetupPayment}}
-          <div class="button primary full-width {{if canPurchase '' 'disabled'}}" {{ action 'makePayment' }}>Make Payment</div>
+        {{#if prefersCreditCard}}
+          {{#if flashMessage}}
+            {{#link-to "payment-setup" class="button primary full-width"}}Set up New Card{{/link-to}}
+          {{else if hasSetupPayment}}
+            <div class="button primary full-width {{if canPurchase '' 'disabled'}}" {{ action 'makePayment' }}>Make Payment</div>
+          {{else}}
+            {{#link-to "payment-setup" class="button primary full-width"}}Set Up Payment{{/link-to}}
+          {{/if}}
         {{else}}
-          {{#link-to "payment-setup" class="button primary full-width"}}Set Up Payment{{/link-to}}
+          {{apple-pay-button total=totalPayableAmount onTransactionComplete=(action "applePayTransactionComplete")}}
         {{/if}}
-        {{apple-pay-button total=totalPayableAmount onTransactionComplete=(action "applePayTransactionComplete")}}
       </div>
     </div>
   {{/if}}

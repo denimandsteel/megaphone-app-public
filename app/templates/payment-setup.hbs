@@ -1,16 +1,24 @@
 {{outlet}}
 <h1>Payment Information</h1>
 <div class="payment-forms">
-  <button class="button" {{action 'useTestCard'}}>TEST</button>
+  <!-- <button class="button" {{action 'useTestCard'}}>TEST</button> -->
   {{#if isLoading}}
     {{spinning-wheel}}
   {{else}}
-    {{#if model.last_four_digits}}
-      <p>Currently billing to credit card ending in <strong>{{model.last_four_digits}}</strong>.</p>
-      {{card-scanner label='Update Credit Card' onCardComplete=(action "useScannedCard")}}
+    {{#if prefersCreditCard}}
+      {{#if model.last_four_digits}}
+        <p>Currently billing to credit card ending in <strong>{{model.last_four_digits}}</strong>.</p>
+        {{card-scanner label='Update Credit Card' onCardComplete=(action "useScannedCard")}}
+      {{else}}
+        <p>Add or update your credit card by scanning it</p>
+        {{card-scanner label='Scan Now' onCardComplete=(action "useScannedCard")}}
+      {{/if}}
+      {{#if canUseApplePay}}
+        <div class="button" {{action 'switchToApplePay'}}>Switch to Apple Pay</div>
+      {{/if}}
     {{else}}
-      <p>Add or update your credit card by scanning it</p>
-      {{card-scanner label='Scan Now' onCardComplete=(action "useScannedCard")}}
+      <p>Currently billing to Apple Pay.</p>
+      <div class="button" {{action 'switchToCreditCard'}}>Switch to Credit Card</div>
     {{/if}}
   {{/if}}
   {{#if flashMessage}}
@@ -20,7 +28,7 @@
   {{/if}}
 </div>
 <div class="footnote">
-  <strong>Your credit card number is not held with Megaphone.</strong> Payments are encrypted &amp; processed by Stripe.
+  <strong>Your credit card number is not held with Street Sense.</strong> Payments are encrypted &amp; processed by Stripe.
 </div>
 <h1>Permissions</h1>
 <div class="permissions">

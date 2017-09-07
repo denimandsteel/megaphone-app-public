@@ -7,7 +7,26 @@ export default Ember.Controller.extend({
   isLoading: false,
   flashMessage: '',
   notifications_enabled: false,
-  
+  canUseApplePay: false,
+
+  prefersCreditCard: Ember.computed.equal('model.preferred_payment_method', 'creditcard'),
+  prefersApplePay: Ember.computed.equal('model.preferred_payment_method', 'applepay'),
+
+  init() {
+    var that = this;
+    if (window.ApplePay) {
+      ApplePay.canMakePayments()
+      .then((message) => {
+        that.set('canUseApplePay', true);
+      })
+      .catch((message) => {
+        that.set('canUseApplePay', false);
+      });  
+    } else {
+      that.set('canUseApplePay', false);
+    }
+  },
+
   updateCreditCardInfo: function(card_number, card_expiry_month, card_expiry_year, card_cvc) {
     var that = this;
     this.set('isLoading', true);
@@ -74,6 +93,14 @@ export default Ember.Controller.extend({
     },
     useScannedCard: function(card_number, card_expiry_month, card_expiry_year, card_cvc) {
       this.updateCreditCardInfo(card_number, card_expiry_month, card_expiry_year, card_cvc);
+    },
+
+    switchToApplePay: function() {
+      this.model.set('preferred_payment_method', 'applepay');
+    },
+
+    switchToCreditCard: function() {
+      this.model.set('preferred_payment_method', 'creditcard');
     }
   }
 });

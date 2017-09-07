@@ -4,6 +4,8 @@ export default Ember.Component.extend({
   isLoading: false,
   tips: 0,
 
+  prefersCreditCard: Ember.computed.equal('model.preferred_payment_method', 'creditcard'),
+
   didInsertElement: function() {
     this.$('.bottom').hide();
     this.$('.bottom').delay(500).fadeIn(500);
@@ -14,6 +16,7 @@ export default Ember.Component.extend({
     var device = this.get('model').device;
     return (device.get('stripe_customer') && device.get('stripe_customer').length > 0);
   }.property('model.device'),
+
 
   setupScroll: function() {
     var didScroll;

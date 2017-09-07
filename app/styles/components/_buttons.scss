@@ -30,7 +30,7 @@
     border: 0px;
     // &:hover,  
     &:focus, &:active {
-      background: $white;
+      background: darken($street-sense-orange, 10%);
       color: $blue-medium;
       text-shadow: none;
     }
