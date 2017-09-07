@@ -3,7 +3,7 @@ import AuthMixin from '../mixins/auth-route';
 
 export default Ember.Route.extend(AuthMixin, {
   beforeModel: function() {
-    if (false && this.get('preferences.seen_onboarding')) {
+    if (this.get('preferences.seen_onboarding')) {
       this.transitionTo('dashboard');
     } else {
       this.set('preferences.seen_onboarding', true);

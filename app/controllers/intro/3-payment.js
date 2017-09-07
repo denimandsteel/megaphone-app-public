@@ -46,7 +46,7 @@ export default Ember.Controller.extend({
     useApplePay() {
       this.model.set('preferred_payment_method', 'applepay');
       this.model.save();
-      that.transitionToRoute('dashboard');
+      this.transitionToRoute('dashboard');
     }
   }
 });
