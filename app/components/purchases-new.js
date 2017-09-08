@@ -4,8 +4,8 @@ export default Ember.Component.extend({
   isLoading: false,
   tips: 0,
 
-  prefersCreditCard: Ember.computed.equal('model.preferred_payment_method', 'creditcard'),
-  
+  prefersCreditCard: Ember.computed.equal('model.device.preferred_payment_method', 'creditcard'),
+
   didInsertElement: function() {
     this.$('.bottom').hide();
     this.$('.bottom').delay(500).fadeIn(500);

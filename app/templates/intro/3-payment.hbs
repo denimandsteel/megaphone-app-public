@@ -7,6 +7,11 @@
   {{#if isLoading}}
     {{spinning-wheel}}
   {{else}}
+    {{#if flashMessage}}
+      <div class="flash-message">
+        {{flashMessage}}
+      </div>
+    {{/if}}
     {{card-scanner class="card-scanner" label='Set Up Card' onCardComplete=(action "useScannedCard")}}
     
     {{#if canUseApplePay}}

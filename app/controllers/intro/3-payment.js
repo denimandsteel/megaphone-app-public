@@ -5,6 +5,7 @@ import appServer from '../../lib/app-server';
 export default Ember.Controller.extend({
   isLoading: false,
   canUseApplePay: false,
+  flashMessage: '',
 
   init() {
     var that = this;
