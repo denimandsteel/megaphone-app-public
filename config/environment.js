@@ -59,7 +59,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.serverHost = "https://street-sense.herokuapp.com";
     ENV.gcmSandbox = "false";
-    ENV.stripePublishableKey = "pk_live_76D3sh0b058MAcPwPRn0NYU9";
+    ENV.stripePublishableKey = "pk_test_rikvMr1z37g5t5gIQtoCZAnK";
   }
 
   return ENV;
