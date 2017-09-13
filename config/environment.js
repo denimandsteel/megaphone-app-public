@@ -11,8 +11,8 @@ module.exports = function(environment) {
     gcmSenderID: "538226332098",
     stripePublishableKey: "pk_test_rikvMr1z37g5t5gIQtoCZAnK",
     googleAnalyticsID: "<googleAnalyticsID>",
-    appTitleShort: "Street Sense",
-    appTitleFull: "Street Sense Vendor Payments",
+    appTitleShort: "Street Sense Media",
+    appTitleFull: "Street Sense Media Vendor Payments",
     
     contentSecurityPolicy: {
       'default-src': "'none'",

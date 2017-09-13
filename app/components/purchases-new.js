@@ -5,6 +5,7 @@ export default Ember.Component.extend({
   tips: 0,
 
   prefersCreditCard: Ember.computed.equal('model.device.preferred_payment_method', 'creditcard'),
+  prefersApplePay: Ember.computed.equal('model.device.preferred_payment_method', 'applepay'),
 
   didInsertElement: function() {
     this.$('.bottom').hide();

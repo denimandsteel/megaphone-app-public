@@ -101,7 +101,7 @@
         </div>
       {{/if}}
       <div class="buttons">
-        {{#if prefersCreditCard}}
+        {{#unless prefersApplePay}}
           {{#if flashMessage}}
             {{#link-to "payment-setup" class="button primary full-width"}}Set up New Card{{/link-to}}
           {{else if hasSetupPayment}}
@@ -111,7 +111,7 @@
           {{/if}}
         {{else}}
           {{apple-pay-button total=totalPayableAmount onTransactionComplete=(action "applePayTransactionComplete")}}
-        {{/if}}
+        {{/unless}}
       </div>
     </div>
   {{/if}}

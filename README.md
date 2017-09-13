@@ -1,6 +1,6 @@
-# Street Sense App
+# Street Sense Media App
 
-The official app for Street Sense, helps customers pay vendors on the streets of Washington, DC. You can use this code under Non-Profit Open Software license and make the necessary changes to make it work with your street paper and your city.
+The official app for Street Sense Media, helps customers pay vendors on the streets of Washington, DC. You can use this code under Non-Profit Open Software license and make the necessary changes to make it work with your street paper and your city.
 
 This app is built with Ember and can be packaged for iOS and Android using Cordova.
 

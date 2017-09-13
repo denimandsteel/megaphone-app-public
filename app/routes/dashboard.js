@@ -9,7 +9,7 @@ export default Ember.Route.extend(AuthMixin, NavBarMixin, {
     controller: 'application',
 
     title: {
-      text: 'Street Sense'
+      text: 'STREET SENSE MEDIA'
     },
 
     rightButton: {
