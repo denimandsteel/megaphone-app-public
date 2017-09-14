@@ -1,9 +1,13 @@
 .settings {
+  background-color: rgba(0,0,0,0.06);
   ul {
+    margin: $page-padding / 2;
+    border-radius: rem(20px);
+    background-color: white;
     li {
       display: block;
       padding: 0 $page-padding;
-      font-size: rem(11pt);
+      font-size: rem(10.5pt);
       color: $street-sense-dark-grey;
       a {
         padding: rem(40px - 3px) 0;
@@ -13,7 +17,10 @@
         color: $text;
       }
       text-transform: capitalize;
-      border-bottom: 1px solid $border;
+      border-bottom: 1px solid rgba($border, 0.2);
+      &:last-child {
+        border-bottom: 0px;
+      }
       &:active {
         background: $superlight-grey;
       }
@@ -26,19 +33,32 @@
     }
   }
   h1 {
-    margin-top: rem(100px);
-    margin-bottom: rem(60px);
+    margin-bottom: rem(24px);
+    margin-top: rem(24px);
+    font-size: rem(40px);
+    background-color: #273975;
+    color: white;
+    padding: 14px;
+    text-transform: none;
   }
 }
+
 .factory-reset {
   color: $red;
 }
+
 .partners {
-  padding: $page-padding;
+  padding: 0 $page-padding / 2;
   .partner {
-    margin-bottom: rem(100px);
+    border-radius: rem(20px);
+    background-color: white;
+    padding: $page-padding;
+    margin-bottom: rem(30px);
     &.last { margin-bottom: 0; }
-    .logo { text-align: center; }
+    .logo { 
+      text-align: center; 
+      margin-top: 10px;
+    }
     img {
       margin: 0 auto;
       width: 65%;
@@ -55,6 +75,7 @@
       font-weight: $light;
     }
     a {
+      padding: 5px;
       display: block;
       font-weight: $semibold;
       text-decoration: none;
