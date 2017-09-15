@@ -14,8 +14,13 @@
 $semibold: 600;
 $light: 300;
 
-$body-font: Arial,Helvetica Neue,Helvetica,sans-serif;
-$header-font: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+@font-face {
+  font-family: 'Impact';
+  src: url('fonts/impact.ttf') format('truetype');
+}
+
+$body-font: Arial;
+$header-font: Impact;
 
 // Frederick's
 // $blue-lighter: #2f76b4;

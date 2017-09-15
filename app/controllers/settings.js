@@ -4,9 +4,11 @@ export default Ember.Controller.extend({
   needs: ['application'],
   taps: 0,
   showReset: false,
+
   hasPreviousPurchases: function() {
     return this.get('model').get('length') > 0;
-  }.property('model'),
+  }.property('model.[]'),
+  
   actions: {
     secretTap: function() {
       this.set('taps', this.get('taps') + 1);
