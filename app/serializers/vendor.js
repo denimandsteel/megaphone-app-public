@@ -2,10 +2,30 @@ import DS from 'ember-data';
 
 export default DS.JSONSerializer.extend(DS.EmbeddedRecordsMixin, {
   flatten_image_urls: function(vendor_hash) {
-    vendor_hash.image_url = vendor_hash.image.url;
-    vendor_hash.thumb_url = vendor_hash.image.thumb.url;
-    vendor_hash.cover_url = vendor_hash.image.cover.url;
-    vendor_hash.profile_url = vendor_hash.image.profile.url;
+    var defaultVendorImage = 'assets/images/vendor-default.svg';
+    if (vendor_hash.image.url.length > 0) {
+      vendor_hash.image_url = vendor_hash.image.url;
+    } else {
+      vendor_hash.image_url = defaultVendorImage;
+    }
+    
+    if (vendor_hash.image.thumb.url.length > 0) {
+      vendor_hash.thumb_url = vendor_hash.image.thumb.url;
+    } else {
+      vendor_hash.thumb_url = defaultVendorImage;
+    }
+    
+    if (vendor_hash.image.cover.url.length > 0) {
+      vendor_hash.cover_url = vendor_hash.image.cover.url;  
+    } else {
+      vendor_hash.cover_url = defaultVendorImage;
+    }
+
+    if (vendor_hash.image.profile.url.length > 0) {
+      vendor_hash.profile_url = vendor_hash.image.profile.url;
+    } else {
+      vendor_hash.profile_url = defaultVendorImage;
+    }
 
     delete vendor_hash.image;
 

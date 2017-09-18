@@ -27,8 +27,11 @@
     box-shadow: 0 rem(3px) rem(5px) $shadow;
     margin-right: rem(15px);
     img {
+      position: relative;
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
     }
   }
   .info {

@@ -12,8 +12,8 @@ App = Ember.Application.extend({
     tap: 'click'
   },
   ready: function() {
-    $("#loading").addClass('hidden');
-    setTimeout(function(){ $("#loading").remove(); }, 1000);
+    // $("#loading").addClass('hidden');
+    // setTimeout(function(){ $("#loading").remove(); }, 1000);
     if (window.navigator && window.navigator.splashscreen) {
       window.navigator.splashscreen.hide();  
     }

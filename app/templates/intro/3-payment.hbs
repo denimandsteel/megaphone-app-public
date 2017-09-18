@@ -7,10 +7,18 @@
   {{#if isLoading}}
     {{spinning-wheel}}
   {{else}}
-    {{card-scanner class="card-scanner" label='Yes, Set Up Payment' onCardComplete=(action "useScannedCard")}}
-    {{#link-to "dashboard" class="button diminished small full-width"}}
-      Not Right Now
-    {{/link-to}}
+    {{#if flashMessage}}
+      <div class="flash-message">
+        {{flashMessage}}
+      </div>
+    {{/if}}
+    
+    {{card-scanner class="card-scanner" label='Set Up Card' onCardComplete=(action "useScannedCard")}}
+    
+    {{#if canUseApplePay}}
+      <div class="button" {{action 'useApplePay'}}>Use Apple Pay</div>
+    {{/if}}
+
     <div class="notice">You can change this later in Settings</div>
   {{/if}}
 </section>

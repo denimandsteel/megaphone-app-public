@@ -5,13 +5,21 @@
   {{#if isLoading}}
     {{spinning-wheel}}
   {{else}}
-    {{#if model.last_four_digits}}
-      <p>Currently billing to credit card ending in <strong>{{model.last_four_digits}}</strong>.</p>
-      {{card-scanner label='Update Credit Card' onCardComplete=(action "useScannedCard")}}
+    {{#unless prefersApplePay}}
+      {{#if model.last_four_digits}}
+        <p>Currently billing to credit card ending in <strong>{{model.last_four_digits}}</strong>.</p>
+        {{card-scanner label='Update Credit Card' onCardComplete=(action "useScannedCard")}}
+      {{else}}
+        <p>Add or update your credit card by scanning it</p>
+        {{card-scanner label='Scan Now' onCardComplete=(action "useScannedCard")}}
+      {{/if}}
+      {{#if canUseApplePay}}
+        <div class="button" {{action 'switchToApplePay'}}>Switch to Apple Pay</div>
+      {{/if}}
     {{else}}
-      <p>Add or update your credit card by scanning it</p>
-      {{card-scanner label='Scan Now' onCardComplete=(action "useScannedCard")}}
-    {{/if}}
+      <p>Currently billing to Apple Pay.</p>
+      <div class="button" {{action 'switchToCreditCard'}}>Switch to Credit Card</div>
+    {{/unless}}
   {{/if}}
   {{#if flashMessage}}
     <div class="flash-message">
