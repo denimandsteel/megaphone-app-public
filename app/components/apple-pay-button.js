@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from '../config/environment';
 /* global ApplePay */
 
 export default Ember.Component.extend({
@@ -41,9 +42,9 @@ export default Ember.Component.extend({
       ],
       shippingMethods: [
       ],
-      merchantIdentifier: 'merchant.com.denimandsteel.streetsense',
-      currencyCode: 'USD',
-      countryCode: 'US',
+      merchantIdentifier: config.merchantIdentifier,
+      currencyCode: config.currencyCode,
+      countryCode: config.countryCode,
       billingAddressRequirement: 'none',
       shippingAddressRequirement: 'none',
       shippingType: 'none'

@@ -5,7 +5,8 @@ export default Ember.Route.extend(AuthMixin, {
   model: function() {
     return Ember.RSVP.hash({
       products: this.store.findAll('product'),
-      vendors: this.store.findAll('vendor'),
+      victoriaVendors: this.store.query('vendor', {city: 'Victoria'}),
+      vancouverVendors: this.store.query('vendor', {city: 'Vancouver'}),
       purchases: this.store.findAll('purchase'),
     });
   },
@@ -13,7 +14,8 @@ export default Ember.Route.extend(AuthMixin, {
   setupController(controller, model) {
     this._super(...arguments);
     Ember.set(controller, 'products', model.products);
-    Ember.set(controller, 'vendors', model.vendors);
+    Ember.set(controller, 'victoriaVendors', model.victoriaVendors);
+    Ember.set(controller, 'vancouverVendors', model.vancouverVendors);
     Ember.set(controller, 'purchases', model.purchases);
   },
 });

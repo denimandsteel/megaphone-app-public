@@ -11,6 +11,12 @@ module.exports = function(environment) {
     gcmSenderID: "<gcmSenderID>",
     stripePublishableKey: "<stripePublishableKey>",
     googleAnalyticsID: "<googleAnalyticsID>",
+
+    applePay: {
+      merchantIdentifier: '<merchantIdentifier>',
+      currencyCode: '<currencyCode>',
+      countryCode: '<countryCode>',
+    },
     
     contentSecurityPolicy: {
       'default-src': "'none'",
