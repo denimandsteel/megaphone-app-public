@@ -21,6 +21,31 @@ export default Ember.Controller.extend({
       this.set('preferences.api_token', undefined);
       this.store.unloadAll();
       this.transitionToRoute('index');
+    },
+
+    openShareSheet: function() {
+
+      // http://streetsensemedia.org/app
+      // Street Sense Media App let's you pay vendors if you don't have cash! For iOS and Android
+
+      var shareURL = "http://streetsensemedia.org/app";
+      
+      var options = {
+        message: "Street Sense Media App lets you pay vendors if you don't have cash! For iOS and Android.",
+        url: shareURL,
+        chooserTitle: 'Pick an app' 
+      };
+
+      var onSuccess = function(result) {
+        console.log("Share completed? " + result.completed); 
+        console.log("Shared to app: " + result.app);
+      };
+
+      var onError = function(msg) {
+        console.log("Sharing failed with message: " + msg);
+      };
+
+      window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
     }
   }
 });
