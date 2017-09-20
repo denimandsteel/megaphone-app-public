@@ -42,9 +42,9 @@ export default Ember.Component.extend({
       ],
       shippingMethods: [
       ],
-      merchantIdentifier: config.merchantIdentifier,
-      currencyCode: config.currencyCode,
-      countryCode: config.countryCode,
+      merchantIdentifier: config.applePay.merchantIdentifier,
+      currencyCode: config.applePay.currencyCode,
+      countryCode: config.applePay.countryCode,
       billingAddressRequirement: 'none',
       shippingAddressRequirement: 'none',
       shippingType: 'none'
