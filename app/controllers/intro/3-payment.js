@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import config from '../../config/environment';
 import appServer from '../../lib/app-server';
+/* global ApplePay */
 
 export default Ember.Controller.extend({
   isLoading: false,

@@ -10,7 +10,6 @@ var onDeviceReady = function() {
   
   setTimeout(function(){
     window.analytics.startTrackerWithId(config.googleAnalyticsID);
-    window.analytics.debugMode();  
   }, 3000);
   
   var container = appInstance.lookup ? appInstance : appInstance.container;

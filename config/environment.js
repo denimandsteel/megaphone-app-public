@@ -13,6 +13,12 @@ module.exports = function(environment) {
     googleAnalyticsID: "<googleAnalyticsID>",
     appTitleShort: "Street Sense Media",
     appTitleFull: "Street Sense Media Vendor Payments",
+
+    applePay: {
+      merchantIdentifier: 'merchant.com.denimandsteel.streetsense',
+      currencyCode: 'USD',
+      countryCode: 'US'
+    },
     
     contentSecurityPolicy: {
       'default-src': "'none'",
@@ -59,7 +65,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.serverHost = "https://app.streetsensemedia.org";
     ENV.gcmSandbox = "false";
-    ENV.stripePublishableKey = "pk_test_rikvMr1z37g5t5gIQtoCZAnK";
+    ENV.stripePublishableKey = "pk_live_76D3sh0b058MAcPwPRn0NYU9";
   }
 
   return ENV;

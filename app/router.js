@@ -12,7 +12,6 @@ const Router = Ember.Router.extend({
   _trackPage() {
     if (typeof window.analytics !== 'undefined') {
       window.analytics.trackView(this.getWithDefault('currentRouteName', 'unknown'));
-      window.analytics.debugMode();
     }
   }
 });

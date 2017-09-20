@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import appServer from '../lib/app-server';
 
 export default Ember.Component.extend({
   isLoading: false,
@@ -85,6 +86,7 @@ export default Ember.Component.extend({
   },
 
   updateApplePayInfo: function(applePayStripeToken) {
+    var that = this;
     appServer.updateApplePayInfo(this.model, this.get('preferences.api_token'), applePayStripeToken, function(error, data) {
       if (error) {
         that.set('flashMessage', error.responseText);
