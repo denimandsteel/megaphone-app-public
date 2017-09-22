@@ -1,43 +1,10 @@
 <li id="vendor-{{vendor.id}}" class="vendor">
   {{#link-to "purchases/new" (query-params vendor=vendor.id)}}
     <div class="header" {{action 'toggleCollapsed'}}>
-      <div class="vendor-image">
-        <div class="vendor-image-container">
-          <img class="vendor-image" src="{{vendor.thumb_url}}">
-        </div>
-      </div>
       <div class="vendor-name">
         <h2>{{vendor.name}}</h2>
         <div class="secondary">Badge {{vendor.badge_id}}</div>
       </div>
-      <!-- {{#if canPay}}
-        <div class="pay">
-          {{#link-to "purchases/new" (query-params vendor=vendor.id) class="button small" bubbles=false}}Pay{{/link-to}}
-        </div>
-      {{/if}} -->
     </div>
   {{/link-to}}
-  <div class="body">
-    <div class="locations">
-      {{#each vendor.locations as |location|}}
-      <div class="location by-name">
-        {{#if location.hasName}}
-          <h2>{{location.name}}</h2>
-        {{/if}}
-        {{#if location.hasCrossStreet}}
-          <div class="cross-street">{{location.cross_street}}</div>
-        {{/if}}  
-        {{#if location.hasDescription}}
-          <h3>Where to find me:</h3>
-          <div>{{{location.description}}}</div>
-        {{/if}}
-        {{#if location.hasHours}}
-          <h3>My usual hours:</h3>
-          <div>{{{location.hours}}}</div>
-        {{/if}}
-        <!-- <a href="http://maps.apple.com/maps?q={{location.cross_street}}, {{location.city}}, BC, Canada" class="button small full-width map-link">Open in Maps</a> -->
-      </div>
-      {{/each}}
-    </div>
-  </div>
 </li>

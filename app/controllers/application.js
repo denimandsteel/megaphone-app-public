@@ -13,7 +13,7 @@ export default Ember.Controller.extend(NavBarMixin, {
 
   watchHistory: function() {
     // if currentPath already exists in history, pop everything up to that point
-    if (this.get('currentPath') === 'loading') {
+    if (this.get('currentPath').indexOf('loading') >= 0) {
       return;
     }
     var repeatIndex = $.inArray(this.get('currentPath'), this.get('megaphoneHistory'));

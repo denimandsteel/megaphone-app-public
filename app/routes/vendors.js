@@ -2,16 +2,6 @@ import Ember from 'ember';
 import NavBarMixin from 'ember-cli-cordova/mixins/routes/nav-bar';
 
 export default Ember.Route.extend(NavBarMixin, {
-  queryParams: {
-    viewmode: {
-      replace: true
-    }
-  },
-
-  setupController: function(controller, model) {
-    controller.set('city', 'Vancouver');
-  },
-
   nav: {
     controller: 'application',
 
@@ -35,11 +25,5 @@ export default Ember.Route.extend(NavBarMixin, {
       }
     },
   },
-
-  actions: {
-    didTransition: function() {
-      this.controller.set('city', 'Vancouver');
-      return true;
-    },
-  }
+ 
 });
