@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   classNames: ['alphabetical-picker'],
   tagName: 'ul',
+
   alphaList: function() {
     var vendors = this.get('vendors').toArray();
     return 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(function(character) {
@@ -16,6 +17,7 @@ export default Ember.Component.extend({
       };
     });
   }.property('vendors.[]'),
+
   actions: {
     chooseCharacter(id) {
       if (id) {

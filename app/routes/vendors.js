@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ResetScrollMixin from '../mixins/reset-scroll';
 import NavBarMixin from 'ember-cli-cordova/mixins/routes/nav-bar';
 
 export default Ember.Route.extend(ResetScrollMixin, NavBarMixin, {
