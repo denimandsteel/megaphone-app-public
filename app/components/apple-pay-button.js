@@ -36,7 +36,7 @@ export default Ember.Component.extend({
     {
       items: [
         {
-          label: 'Total',
+          label: 'Street Sense Media',
           amount: this.get('total') / 100
         },
       ],

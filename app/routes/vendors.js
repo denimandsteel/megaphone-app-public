@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import NavBarMixin from 'ember-cli-cordova/mixins/routes/nav-bar';
 
-export default Ember.Route.extend(NavBarMixin, {
+export default Ember.Route.extend(ResetScrollMixin, NavBarMixin, {
   nav: {
     controller: 'application',
 
