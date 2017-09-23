@@ -11,9 +11,12 @@ export default Ember.Controller.extend({
   sortedProducts: Ember.computed.sort('products', 'productsSortingAsc'),
   sortedCarouselProducts: Ember.computed.filterBy('sortedProducts', 'in_app'),
   recentPurchases: Ember.computed.sort('purchases', 'purchasesSortingRecent'),
+  loadingVendors: false,
+
   topRecentPurchases: function() {
     return this.get('recentPurchases').toArray().slice(0, 5);
   }.property('recentPurchases'),
+
   recentVendors: function() {
     var allRecentVendors = this.get('recentPurchases').toArray().map(function(purchase) {return purchase.get('vendor');});
     var vendorIds = [];
@@ -26,12 +29,14 @@ export default Ember.Controller.extend({
     });
     return uniqueVendors; 
   }.property('recentPurchases'),
+
   actions: {
-    go_to_vendors_by_map: function() {
-      this.transitionToRoute('vendors', {queryParams: {viewmode: 'map'}});
-    },
-    go_to_vendors_by_name: function() {
-      this.transitionToRoute('vendors', {queryParams: {viewmode: 'name'}});
+    go_to_vendors: function() {
+      this.set('loadingVendors', true);
+      Ember.run.later((() => {
+        this.transitionToRoute('vendors');
+      }), 100);
+      
     }
   }
 });

@@ -55,6 +55,7 @@
     padding: $page-padding;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   .button {
     padding: $page-padding * 2 / 3;

@@ -15,7 +15,11 @@
   <div class="find-vendors">
     <div class="buttons">
       <!-- <div class="button primary" {{action 'go_to_vendors_by_map'}}>Find a Vendor</div> -->
-      <div class="button primary" {{action 'go_to_vendors_by_name'}}>Pay a Vendor</div>
+      {{#if loadingVendors}}
+        <div class="spinning-wheel"></div>
+      {{else}}
+        <div class="button primary" {{action 'go_to_vendors'}}>Pay a Vendor</div>
+      {{/if}}
     </div>
   </div>
 </section>

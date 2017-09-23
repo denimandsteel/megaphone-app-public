@@ -4,7 +4,12 @@ import NavBarMixin from 'ember-cli-cordova/mixins/routes/nav-bar';
 import config from '../config/environment';
 
 export default Ember.Route.extend(AuthMixin, NavBarMixin, {
-  
+
+  activate: function() {
+    console.log('activate called');
+    this.controllerFor("dashboard").set('loadingVendors', false);
+  },
+
   nav: {
     controller: 'application',
 
